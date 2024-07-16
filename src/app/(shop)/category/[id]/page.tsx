@@ -8,7 +8,7 @@ interface Props  {
 }
 
 
-export default function({params}: Props ) {
+export default function NotFoundOk({params}: Props ) {
  const {id} = params
 
  if (id === "kids") {
