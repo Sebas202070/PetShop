@@ -1,9 +1,11 @@
-import { notFound } from "next/navigation";
+import { ProductGrid, Title } from "@/components";
+import { ValidCategory, initialData } from "@/seeds";
 
 
+const seedProducts = initialData.products
 interface Props  {
   params: {
-    id: string
+    id: ValidCategory
   }
 }
 
@@ -11,13 +13,30 @@ interface Props  {
 export default function NotFoundOk({params}: Props ) {
  const {id} = params
 
- if (id === "kids") {
+ const products = seedProducts.filter(p => p.gender === id)
+
+ /* if (id === "kids") {
   notFound()
 
+ } */
+
+ const labels: Record<ValidCategory,string> = {
+ 
+  "unisex":"Unisex",
+  "women":"Cachorros",
+  "kid":"Unisex",
+  "men":"Adultos"
  }
   return (
     <div>
-      <h1>Category Page {id}</h1>
+     <Title
+     title={`Articulos de ${labels[id]}`}/>
+      
+     <ProductGrid
+     products={products}
+    
+     />
+      
     </div>
   );
 }

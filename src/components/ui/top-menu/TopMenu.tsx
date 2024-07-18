@@ -3,6 +3,7 @@
 import { titleFont } from "@/config/fonts"
 import { useUISTORE } from "@/store"
 import Link from "next/link"
+import { FaDog } from "react-icons/fa"
 import {  IoSearchOutline, IoCart } from "react-icons/io5"
 
 
@@ -14,15 +15,22 @@ export const TopMenu = () => {
   return (
     <nav className="flex px5 justify-between items-center w-full">
         <div>
-<Link href='/'>
+<Link className="flex" href='/'>
 <span className={`${titleFont.className} font-bold antialiased`}>Pet Shop</span>
-    <span> | Shop</span>
+    <span > | La Santa </span>
+    <FaDog 
+    className="ml-1"
+    size={20}
+    
+    />
+   
+   
 </Link>
 </div>
 <div className="hidden sm:block">
     <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-500" href="/category/men">Adultos</Link>
     <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-500" href="/category/women">Cachorros</Link>
-    <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-500" href="/category/children">Unisex</Link>
+    <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-500" href="/category/kid">Unisex</Link>
    
     
 </div>
