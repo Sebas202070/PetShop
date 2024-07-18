@@ -28,8 +28,9 @@ Hola Mundo
 <h1 className="text-xl font-semibold antialiased">{product?.title}</h1>
 <p className="text-lg mb-5">${product?.price}</p>
 <SizeSelector
-availableSizes={product?.sizes}
 selectedSize={product?.sizes[1]}
+availableSizes={product?.sizes}
+
 />
 <button className="btn-primary my-5">Agregar al carrito</button>
 <h3 className="font-bold text-sm">Descripcion</h3>
