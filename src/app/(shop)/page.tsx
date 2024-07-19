@@ -12,7 +12,9 @@ export default function Home() {
 title={"PetShop La Santa"}
 subtitle="Todo para tus Mascotas"
 />
+<div className="md:ml-20">
     <ProductGrid products={products}/>
+    </div>
     </>
   );
 }

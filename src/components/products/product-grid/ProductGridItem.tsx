@@ -19,7 +19,7 @@ const [displayImage, setDisplayImage] = useState(product.images[0])
         <Image
         src={`/${displayImage}`}
         alt={product.title}
-        className=" object-cover h-48 w-48 "
+        className=" object-cover w-40 ml-8"
         width={500}
         height={500}
         onMouseEnter= {() => setDisplayImage(product.images[1])}

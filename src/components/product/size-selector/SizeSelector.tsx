@@ -1,4 +1,6 @@
-import type { ValidSizes } from "@/interfaces"
+
+
+import { ValidSizes } from "@/interfaces"
 import clsx from "clsx"
 
 
@@ -10,7 +12,7 @@ interface Props {
  
 export const SizeSelector = ({availableSizes,selectedSize}:Props) => {
 
-    console.log(availableSizes)
+  
   return (
     <div>
         <h3>Talles disponibles</h3>

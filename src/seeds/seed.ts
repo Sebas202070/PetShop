@@ -1,4 +1,4 @@
-interface SeedProduct {
+interface SeedProduct  {
     description: string;
     images: string[];
     inStock: number;
@@ -8,21 +8,21 @@ interface SeedProduct {
     tags: string[];
     title: string;
     type: ValidTypes;
-    gender:ValidCategory
-}
+    gender: ValidCategory
+} 
 export type ValidCategory =  'men'|'women'|'kid'|'unisex'
 export type ValidSizes = 'XS'|'S'|'M'|'L'|'XL'|'XXL'|'XXXL';
 export type ValidTypes = 'shirts'|'pants'|'hoodies'|'hats';
 
 interface SeedData {
-    products: SeedProduct[],
+    products: SeedProduct[] ,
 }
 
 
 
 
 export const initialData: SeedData = {
-    products: [
+    products:  [
         {
             description: "Introducing the Tesla Chill Collection. The Men’s Chill Crew Neck Sweatshirt has a premium, heavyweight exterior and soft fleece interior for comfort in any season. The sweatshirt features a subtle thermoplastic polyurethane T logo on the chest and a Tesla wordmark below the back collar. Made from 60% cotton and 40% recycled polyester.",
             images: [
@@ -62,8 +62,8 @@ export const initialData: SeedData = {
         {
             description: "Introducing the Tesla Raven Collection. The Men's Raven Lightweight Zip Up Bomber has a premium, modern silhouette made from a sustainable bamboo cotton blend for versatility in any season. The hoodie features subtle thermoplastic polyurethane Tesla logos on the left chest and below the back collar, a concealed chest pocket with custom matte zipper pulls and a french terry interior. Made from 70% bamboo and 30% cotton.",
             images: [
-                '1740250-00-A_0_2000.jpg',
-                '1740250-00-A_1.jpg'
+                'IMG-20240602-WA0020-removebg-preview.jpg',
+                'IMG-20240602-WA0024-removebg-preview.jpg'
             ],
             inStock: 10,
             price: 130,
@@ -71,15 +71,15 @@ export const initialData: SeedData = {
             slug: "men_raven_lightweight_zip_up_bomber_jacket",
             type: 'shirts',
             tags: ['shirt'],
-            title: "Men's Raven Lightweight Zip Up Bomber Jacket",
+            title: "Men's Raven Lightweight",
             gender: 'men'
         },
 
         {
             description: "Introducing the Tesla Turbine Collection. Designed for style, comfort and everyday lifestyle, the Men's Turbine Long Sleeve Tee features a subtle, water-based T logo on the left chest and our Tesla wordmark below the back collar. The lightweight material is double-dyed, creating a soft, casual style for ideal wear in any season. Made from 50% cotton and 50% polyester.",
             images: [
-                '1740280-00-A_0_2000.jpg',
-                '1740280-00-A_1.jpg',
+               'IMG-20240602-WA0019-removebg-preview.jpg',
+                'IMG-20240602-WA0025(2)-removebg-preview.jpg',
             ],
             inStock: 50,
             price: 45,
@@ -93,8 +93,8 @@ export const initialData: SeedData = {
         {
             description: "Introducing the Tesla Turbine Collection. Designed for style, comfort and everyday lifestyle, the Men's Turbine Short Sleeve Tee features a subtle, water-based Tesla wordmark across the chest and our T logo below the back collar. The lightweight material is double-dyed, creating a soft, casual style for ideal wear in any season. Made from 50% cotton and 50% polyester.",
             images: [
-                '1741416-00-A_0_2000.jpg',
-                '1741416-00-A_1.jpg',
+                'IMG-20240602-WA0019-removebg-preview.jpg',
+                'IMG-20240602-WA0018-removebg-preview.jpg',
             ],
             inStock: 50,
             price: 40,
@@ -108,8 +108,8 @@ export const initialData: SeedData = {
         {
             description: "Designed for comfort, the Cybertruck Owl Tee is made from 100% cotton and features our signature Cybertruck icon on the back.",
             images: [
-                '7654393-00-A_2_2000.jpg',
-                '7654393-00-A_3.jpg',
+                'IMG-20240602-WA0019-removebg-preview.jpg',
+                'IMG-20240602-WA0025(2)-removebg-preview.jpg',
             ],
             inStock: 0,
             price: 35,
@@ -123,8 +123,8 @@ export const initialData: SeedData = {
         {
             description: "Inspired by our fully integrated home solar and storage system, the Tesla Solar Roof Tee advocates for clean, sustainable energy wherever you go. Designed for fit, comfort and style, the tee features an aerial view of our seamless Solar Roof design on the front with our signature T logo above 'Solar Roof' on the back. Made from 100% Peruvian cotton.",
             images: [
-                '1703767-00-A_0_2000.jpg',
-                '1703767-00-A_1.jpg',
+                'IMG-20240602-WA0023-removebg-preview2.jpg',
+                'IMG-20240602-WA0027-removebg-preview3.jpg',
             ],
             inStock: 15,
             price: 35,
@@ -138,8 +138,8 @@ export const initialData: SeedData = {
         {
             description: "Inspired by the world’s most unlimited resource, the Let the Sun Shine Tee highlights our fully integrated home solar and storage system. Designed for fit, comfort and style, the tee features a sunset graphic along with our Tesla wordmark on the front and our signature T logo printed above 'Solar Roof' on the back. Made from 100% Peruvian cotton.",
             images: [
-                '1700280-00-A_0_2000.jpg',
-                '1700280-00-A_1.jpg',
+                'IMG-20240602-WA0019-removebg-preview.jpg',
+                'IMG-20240602-WA0018-removebg-preview.jpg',
             ],
             inStock: 17,
             price: 35,
@@ -153,8 +153,8 @@ export const initialData: SeedData = {
         {
             description: "Designed for fit, comfort and style, the Men's 3D Large Wordmark Tee is made from 100% Peruvian cotton with a 3D silicone-printed Tesla wordmark printed across the chest.",
             images: [
-                '8764734-00-A_0_2000.jpg',
-                '8764734-00-A_1.jpg',
+               'IMG-20240602-WA0023-removebg-preview2.jpg',
+                'IMG-20240602-WA0027-removebg-preview3.jpg',
             ],
             inStock: 12,
             price: 35,
@@ -165,7 +165,7 @@ export const initialData: SeedData = {
             title: "Men's 3D Large Wordmark Tee",
             gender: 'men'
         },
-        {
+        /* {
             description: "Designed for fit, comfort and style, the Tesla T Logo Tee is made from 100% Peruvian cotton and features a silicone-printed T Logo on the left chest.",
             images: [
                 '7652426-00-A_0_2000.jpg',
@@ -194,7 +194,7 @@ export const initialData: SeedData = {
             tags: ['shirt'],
             title: "Men’s 3D Small Wordmark Tee",
             gender: 'men'
-        },
+        }, */
        /*  {
             description: "Designed to celebrate Tesla's incredible performance mode, the Plaid Mode Tee features great fit, comfort and style. Made from 100% cotton, it's the next best thing to riding shotgun at the Nürburgring.",
             images: [
@@ -812,5 +812,5 @@ export const initialData: SeedData = {
         },
     ]
 } */
-    ]
+    ] 
 }
