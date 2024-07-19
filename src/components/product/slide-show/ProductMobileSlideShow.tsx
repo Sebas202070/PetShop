@@ -27,7 +27,7 @@ export const ProductMobileSlideShow = ({title,images,classname}:Props) => {
     <Swiper
    style={{
     width:"50vh",
-    height:"290px",
+    height:"280px",
     marginBottom:"10px",
     marginTop:"20px"
    
@@ -43,11 +43,11 @@ spaceBetween={50}
     images.map(i=> (
 <SwiperSlide key={i}>
      <Image
-   
+   className='object-cover'
      src={`/${i}`}
      alt='Not Found'
-     width={500}
-     height={500}
+     width={700}
+     height={700}
      />
      </SwiperSlide>
     ))
@@ -56,7 +56,7 @@ spaceBetween={50}
   </Swiper>
   <Swiper
   style={{
-    width:"350px",
+    width:"400px",
     height:"100px",
 /*        marginLeft:"300px" */
    }}
@@ -77,7 +77,7 @@ spaceBetween={50}
      alt='Not Found'
      width={400}
      height={400}
-     className='object-fill'
+     className='object-cover'
      />
      </SwiperSlide>
    

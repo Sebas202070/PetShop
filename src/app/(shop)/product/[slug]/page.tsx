@@ -17,7 +17,7 @@ interface Props {
 
 export default function ProductItemPage({params}:Props) {
 const {slug} = params
-const product = initialData.products.find(p => p.slug === slug)
+const product = initialData.products.find(p => p.slug === slug)!
 
 if (!product) {
   NotFound()
@@ -27,8 +27,8 @@ if (!product) {
     <div className="mt-5 mb-5 grid md:grid-cols-3 gap-3">
   <div className="col-span-1 md:col-span-2">
     <ProductMobileSlideShow
-    title={product?.title!}
-    images={product?.images!}
+    title={product?.title}
+    images={product?.images}
     classname=""
     />
 {/* <ProductSlideShow
@@ -41,8 +41,8 @@ images={product?.images}
 <h1 className="text-xl font-semibold antialiased">{product?.title}</h1>
 <p className="text-lg mb-5">${product?.price}</p>
 <SizeSelector
-selectedSize={product?.sizes[0]!}
-availableSizes={product?.sizes!}
+selectedSize={product?.sizes[0]}
+availableSizes={product?.sizes}
 
 />
 <QuantitySelector/>
