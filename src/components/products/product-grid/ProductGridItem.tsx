@@ -21,8 +21,8 @@ const [displayImage, setDisplayImage] = useState(product.images[0])
         alt={product.title}
         className="object-fill ml-8"
         style={{
-          width:"182px",
-          height:"182px",
+          width:"170px",
+          height:"170px",
        
         }}
         width={500}

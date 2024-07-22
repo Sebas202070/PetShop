@@ -8,43 +8,52 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import "./productslideshow.css"
-import React, { useState } from 'react';
-import { Autoplay, FreeMode, Navigation, Thumbs, } from 'swiper/modules';
+
+import { FreeMode, Navigation,Autoplay, Thumbs } from 'swiper/modules';
 import Image from 'next/image';
+import { useState } from 'react';
 
 
 interface Props {
     title: string;
     images:string[];
-    classname?:string;
+    classname:string;
 }
 export const ProductSlideShow = ({title,images,classname}:Props) => {
-    const [thumbsSwiper, setThumbsSwiper] = useState<SwiperObject>();
 
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperObject>();
   return (
     <>
     <Swiper
-    style={{
-      '--swiper-navigation-color': '#080808',
-      '--swiper-pagination-color': '#080808',
+   style={{
+    width:"58vh",
+    height:"228px",
+    marginBottom:"10px",
+    marginTop:"80px",
    
-    
-    } as React.CSSProperties}
-    spaceBetween={10}
+   
+   
+   
+   }}
+   
+   thumbs={{ swiper: thumbsSwiper }}
     navigation={true}
     autoplay={{delay:2500}}
-    thumbs={{ swiper: thumbsSwiper }}
-    modules={[FreeMode, Navigation, Thumbs, Autoplay, Navigation]}
+spaceBetween={50}
+ 
+    modules={[FreeMode, Navigation,Autoplay, Thumbs]}
     className="mySwiper2"
   >{
     images.map(i=> (
 <SwiperSlide key={i}>
      <Image
-   
+   className='object-fill'
      src={`/${i}`}
      alt='Not Found'
-     width={500}
-     height={500}
+     width={700}
+     height={700}
+     
+     
      />
      </SwiperSlide>
     ))
@@ -52,8 +61,13 @@ export const ProductSlideShow = ({title,images,classname}:Props) => {
     
   </Swiper>
   <Swiper
+  style={{
+    width:"520px",
+    height:"100px",
+/*        marginLeft:"300px" */
+   }}
         onSwiper={setThumbsSwiper}
-        spaceBetween={10}
+        spaceBetween={8}
         slidesPerView={4}
         freeMode={true}
         watchSlidesProgress={true}
@@ -67,8 +81,10 @@ export const ProductSlideShow = ({title,images,classname}:Props) => {
 
      src={`/${i}`}
      alt='Not Found'
-     width={400}
-     height={400}
+     width={380}
+     height={380}
+     className='object-cover'
+     
      />
      </SwiperSlide>
    

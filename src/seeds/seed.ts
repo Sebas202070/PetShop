@@ -37,7 +37,7 @@ export const initialData: SeedData = {
             slug: "mens_chill_crew_neck_sweatshirt",
             type: 'shirts',
             tags: ['sweatshirt'],
-            title: "Men’s Chill Crew Neck Sweatshirt",
+            title: "Men’s Chill Crew Neck ",
             gender: 'men'
         },
         {
@@ -89,7 +89,7 @@ export const initialData: SeedData = {
             slug: "men_turbine_long_sleeve_tee",
             type: 'shirts',
             tags: ['shirt'],
-            title: "Men's Turbine Long Sleeve Tee",
+            title: "Men's Turbine Long Sleeve",
             gender: 'men'
         },
         {
@@ -104,7 +104,7 @@ export const initialData: SeedData = {
             slug: "men_turbine_short_sleeve_tee",
             type: 'shirts',
             tags: ['shirt'],
-            title: "Men's Turbine Short Sleeve Tee",
+            title: "Men's Turbine Short Sleeve",
             gender: 'men'
         },
         {
@@ -149,7 +149,7 @@ export const initialData: SeedData = {
             slug: "men_let_the_sun_shine_tee",
             type: 'shirts',
             tags: ['shirt'],
-            title: "Men's Let the Sun Shine Tee",
+            title: "Men's Let the Sun Shine",
             gender: 'men'
         },
         {
@@ -164,7 +164,7 @@ export const initialData: SeedData = {
             slug: "men_3d_large_wordmark_tee",
             type: 'shirts',
             tags: ['shirt'],
-            title: "Men's 3D Large Wordmark Tee",
+            title: "Men's 3D Large Wordmark",
             gender: 'men'
         },
         /* {

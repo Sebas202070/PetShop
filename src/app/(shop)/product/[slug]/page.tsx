@@ -26,15 +26,24 @@ if (!product) {
   return (
     <div className="mt-5 mb-5 grid md:grid-cols-3 gap-3">
   <div className="col-span-1 md:col-span-2">
+    <div className="block md:hidden">
     <ProductMobileSlideShow
     title={product?.title}
     images={product?.images}
     classname=""
+    
+
     />
-{/* <ProductSlideShow
-title={product?.title}
-images={product?.images}
-/> */}
+    </div>
+    <div className="hidden md:block">
+<ProductSlideShow
+ title={product?.title}
+ images={product?.images}
+classname=""
+ 
+
+/>
+</div>
   </div>
   <div className="col-span-1 mx-5 bg px-5 bg-gray-200 py-4">
 
