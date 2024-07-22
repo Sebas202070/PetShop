@@ -28,8 +28,8 @@ export const initialData: SeedData = {
             images: [
                 
                 'IMG-20240602-WA0023-removebg-preview2.jpg',
-                'IMG-20240602-WA0027-removebg-preview3.jpg',
-              
+               
+              'IMG-20240602-WA0028-removebg-preview1.jpg',
             ],
             inStock: 7,
             price: 75,
@@ -44,8 +44,10 @@ export const initialData: SeedData = {
             description: "The Men's Quilted Shirt Jacket features a uniquely fit, quilted design for warmth and mobility in cold weather seasons. With an overall street-smart aesthetic, the jacket features subtle silicone injected Tesla logos below the back collar and on the right sleeve, as well as custom matte metal zipper pulls. Made from 87% nylon and 13% polyurethane.",
             images: [
          
-                'IMG-20240602-WA0028-removebg-preview1.jpg',
+                
+                'IMG-20240602-WA0027-removebg-preview3.jpg',
                 'IMG-20240602-WA0022-removebg-preview4.jpg',
+       
                
                
             ],

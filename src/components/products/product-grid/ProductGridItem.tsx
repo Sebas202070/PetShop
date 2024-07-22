@@ -14,12 +14,17 @@ export const ProductGridItem = ({product}: Props) => {
 const [displayImage, setDisplayImage] = useState(product.images[0])
 
   return (
-    <div className="rounded-md overflow-hidden fade-in ">
+    <div className="rounded-md overflow-hidden fade-in">
          <Link href={`/product/${product.slug}`}>
         <Image
         src={`/${displayImage}`}
         alt={product.title}
-        className=" object-cover w-40 ml-8"
+        className="object-fill ml-8"
+        style={{
+          width:"182px",
+          height:"182px",
+       
+        }}
         width={500}
         height={500}
         onMouseEnter= {() => setDisplayImage(product.images[1])}

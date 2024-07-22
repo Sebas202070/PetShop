@@ -26,10 +26,10 @@ export const ProductMobileSlideShow = ({title,images,classname}:Props) => {
     <>
     <Swiper
    style={{
-    width:"50vh",
-    height:"280px",
+    width:"58vh",
+    height:"240px",
     marginBottom:"10px",
-    marginTop:"20px"
+    marginTop:"80px"
    
    }}
    thumbs={{ swiper: thumbsSwiper }}
@@ -48,6 +48,7 @@ spaceBetween={50}
      alt='Not Found'
      width={700}
      height={700}
+     
      />
      </SwiperSlide>
     ))
@@ -56,12 +57,12 @@ spaceBetween={50}
   </Swiper>
   <Swiper
   style={{
-    width:"400px",
+    width:"480px",
     height:"100px",
 /*        marginLeft:"300px" */
    }}
         onSwiper={setThumbsSwiper}
-        spaceBetween={10}
+        spaceBetween={8}
         slidesPerView={4}
         freeMode={true}
         watchSlidesProgress={true}
@@ -78,6 +79,7 @@ spaceBetween={50}
      width={400}
      height={400}
      className='object-cover'
+     
      />
      </SwiperSlide>
    
