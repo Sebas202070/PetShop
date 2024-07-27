@@ -10,18 +10,24 @@ interface SeedProduct  {
     type: ValidTypes;
     gender: ValidCategory
 } 
-export type ValidCategory =  'men'|'women'|'kid'|'unisex'
-export type ValidSizes = 'XS'|'S'|'M'|'L'|'XL'|'XXL'|'XXXL';
+export type ValidCategory =  'Men'|'Women'|'Kids'|'Unisex'
+export type ValidSizes = 'XS'|'S'|'M'|'L'|'XL'|'XXL';
 export type ValidTypes = 'shirts'|'pants'|'hoodies'|'hats';
 
 interface SeedData {
+    categories: string[],
     products: SeedProduct[] ,
+
 }
 
 
 
 
 export const initialData: SeedData = {
+categories:
+
+['Shirts','Pants','Hoodies','Hats'],
+
     products:  [
         {
             description: "Introducing the Tesla Chill Collection. The Men’s Chill Crew Neck Sweatshirt has a premium, heavyweight exterior and soft fleece interior for comfort in any season. The sweatshirt features a subtle thermoplastic polyurethane T logo on the chest and a Tesla wordmark below the back collar. Made from 60% cotton and 40% recycled polyester.",
@@ -38,7 +44,7 @@ export const initialData: SeedData = {
             type: 'shirts',
             tags: ['sweatshirt'],
             title: "Men’s Chill Crew Neck ",
-            gender: 'men'
+            gender: 'Men'
         },
         {
             description: "The Men's Quilted Shirt Jacket features a uniquely fit, quilted design for warmth and mobility in cold weather seasons. With an overall street-smart aesthetic, the jacket features subtle silicone injected Tesla logos below the back collar and on the right sleeve, as well as custom matte metal zipper pulls. Made from 87% nylon and 13% polyurethane.",
@@ -58,7 +64,7 @@ export const initialData: SeedData = {
             type: 'shirts',
             tags: ['jacket'],
             title: "Men's Quilted Shirt Jacket",
-            gender: 'men'
+            gender: 'Men'
         },
         
         {
@@ -74,7 +80,7 @@ export const initialData: SeedData = {
             type: 'shirts',
             tags: ['shirt'],
             title: "Men's Raven Lightweight",
-            gender: 'men'
+            gender: 'Men'
         },
 
         {
@@ -90,7 +96,7 @@ export const initialData: SeedData = {
             type: 'shirts',
             tags: ['shirt'],
             title: "Men's Turbine Long Sleeve",
-            gender: 'men'
+            gender: 'Men'
         },
         {
             description: "Introducing the Tesla Turbine Collection. Designed for style, comfort and everyday lifestyle, the Men's Turbine Short Sleeve Tee features a subtle, water-based Tesla wordmark across the chest and our T logo below the back collar. The lightweight material is double-dyed, creating a soft, casual style for ideal wear in any season. Made from 50% cotton and 50% polyester.",
@@ -105,7 +111,7 @@ export const initialData: SeedData = {
             type: 'shirts',
             tags: ['shirt'],
             title: "Men's Turbine Short Sleeve",
-            gender: 'men'
+            gender: 'Men'
         },
         {
             description: "Designed for comfort, the Cybertruck Owl Tee is made from 100% cotton and features our signature Cybertruck icon on the back.",
@@ -120,7 +126,7 @@ export const initialData: SeedData = {
             type: 'shirts',
             tags: ['shirt'],
             title: "Men's Cybertruck Owl Tee",
-            gender: 'men'
+            gender: 'Men'
         },
         {
             description: "Inspired by our fully integrated home solar and storage system, the Tesla Solar Roof Tee advocates for clean, sustainable energy wherever you go. Designed for fit, comfort and style, the tee features an aerial view of our seamless Solar Roof design on the front with our signature T logo above 'Solar Roof' on the back. Made from 100% Peruvian cotton.",
@@ -135,7 +141,7 @@ export const initialData: SeedData = {
             type: 'shirts',
             tags: ['shirt'],
             title: "Men's Solar Roof Tee",
-            gender: 'men'
+            gender: 'Men'
         },
         {
             description: "Inspired by the world’s most unlimited resource, the Let the Sun Shine Tee highlights our fully integrated home solar and storage system. Designed for fit, comfort and style, the tee features a sunset graphic along with our Tesla wordmark on the front and our signature T logo printed above 'Solar Roof' on the back. Made from 100% Peruvian cotton.",
@@ -150,7 +156,7 @@ export const initialData: SeedData = {
             type: 'shirts',
             tags: ['shirt'],
             title: "Men's Let the Sun Shine",
-            gender: 'men'
+            gender: 'Men'
         },
         {
             description: "Designed for fit, comfort and style, the Men's 3D Large Wordmark Tee is made from 100% Peruvian cotton with a 3D silicone-printed Tesla wordmark printed across the chest.",
@@ -165,7 +171,7 @@ export const initialData: SeedData = {
             type: 'shirts',
             tags: ['shirt'],
             title: "Men's 3D Large Wordmark",
-            gender: 'men'
+            gender: 'Men'
         },
         /* {
             description: "Designed for fit, comfort and style, the Tesla T Logo Tee is made from 100% Peruvian cotton and features a silicone-printed T Logo on the left chest.",

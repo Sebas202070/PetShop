@@ -45,7 +45,7 @@ classname=""
 />
 </div>
   </div>
-  <div className="col-span-1 mx-5 bg px-5 bg-gray-200 py-4">
+  <div className="w-[380px] col-span-1 mx-5 bg px-5 bg-gray-200 py-4 ">
 
 <h1 className="text-xl font-semibold antialiased">{product?.title}</h1>
 <p className="text-lg mb-5">${product?.price}</p>

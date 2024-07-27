@@ -16,8 +16,8 @@ export const TopMenu = () => {
     <nav className="flex px5 justify-between items-center w-full">
         <div>
 <Link className="flex" href='/'>
-<span className={`${titleFont.className} font-bold antialiased`}>Pet Shop</span>
-    <span > | La Santa </span>
+<span className={`${titleFont.className} font-bold antialiased`}>PetShop </span>
+    <span>|La Santa</span>
     <FaDog 
     className="ml-1"
     size={20}
