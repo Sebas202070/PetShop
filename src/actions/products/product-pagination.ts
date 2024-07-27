@@ -16,17 +16,19 @@ include:{
 }
     })
 
-    console.log(productsDb)
+
     return {
         productsDb: productsDb.map(product => ({
             ...product,
             images:product.ProductImage.map(image => (image.url))
+           
         }))
 
+       
     }
-
+   
 } catch (error) {
     console.log(error)
 }
-    
+
 }
