@@ -7,7 +7,7 @@ import { initialData } from "@/seeds/seed";
 export default async function Home() {
 
   /* const products = initialData.products */
-const productsDb = await getPaginatedProductsWithImages()
+const {productsDb} = await getPaginatedProductsWithImages()
 console.log(productsDb)
   return (
     <>

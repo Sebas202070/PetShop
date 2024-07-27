@@ -28,7 +28,8 @@ include:{
     }
    
 } catch (error) {
-    console.log(error)
+   
+    throw new Error("No se pudo cargar los productos")
 }
 
 }
