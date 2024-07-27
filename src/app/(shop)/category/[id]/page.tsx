@@ -1,8 +1,9 @@
+import { getPaginatedProductsWithImages } from "@/actions";
 import { ProductGrid, Title } from "@/components";
 import { ValidCategory, initialData } from "@/seeds";
 
 
-const seedProducts = initialData.products
+
 interface Props  {
   params: {
     id: ValidCategory
@@ -10,10 +11,12 @@ interface Props  {
 }
 
 
-export default function NotFoundOk({params}: Props ) {
+export default async function NotFoundOk({params}: Props ) {
+
+const {productsDb} = await getPaginatedProductsWithImages()
  const {id} = params
 
- const products = seedProducts.filter(p => p.gender === id)
+ const products = productsDb.filter(p => p.gender === id)
 
  /* if (id === "kids") {
   notFound()
@@ -22,10 +25,10 @@ export default function NotFoundOk({params}: Props ) {
 
  const labels: Record<ValidCategory,string> = {
  
-  "unisex":"Unisex",
-  "women":"Cachorros",
-  "kid":"Unisex",
-  "men":"Adultos"
+  "Unisex":"Unisex",
+  "Women":"Women",
+  "Kids":"Kids",
+  "Men":"Men"
  }
   return (
     <div>
