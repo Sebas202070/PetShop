@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+"build": "prisma generate && <actual-build-command>",
     "start": "next start",
     "lint": "next lint",
-    "seed": "ts-node src/seeds/seed-database.ts"
+    "seed": "ts-node src/seeds/seed-database.ts",
+    "postinstall": "prisma generate"
+    
   },
   "dependencies": {
     "@prisma/client": "^5.17.0",
