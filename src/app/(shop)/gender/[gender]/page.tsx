@@ -43,7 +43,7 @@ if(productsDb.length === 0) {
   return (
     <div>
      <Title
-     title={`Articulos De ${gender}`}/>
+     title={`Articulos de ${gender}`}/>
       
      <ProductGrid
      products={productsDb}
