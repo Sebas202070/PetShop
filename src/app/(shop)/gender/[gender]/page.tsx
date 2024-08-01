@@ -18,13 +18,14 @@ interface Props  {
 
 export default async function NotFoundOk({params,searchParams}: Props ) {
   const {gender} = params
+  console.log(gender)
   const page = searchParams.page ? parseInt(searchParams.page) : 1
 const {productsDb,totalPages} = await getPaginatedProductsWithImages({page,gender:gender as Gender,
 })
  
-if(productsDb.length === 0) {
+/* if(productsDb.length === 0) {
   redirect(`/gender/${gender}`)
-}
+} */
 
 
  /* if (id === "kids") {
