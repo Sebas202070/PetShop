@@ -7,8 +7,8 @@
 "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "seed": "ts-node src/seeds/seed-database.ts",
-    "postinstall": "prisma generate"
+    "seed": "ts-node src/seeds/seed-database.ts"
+
     
     
   },
