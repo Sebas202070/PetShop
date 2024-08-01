@@ -44,7 +44,7 @@ const {productsDb,totalPages} = await getPaginatedProductsWithImages({page,gende
   return (
     <div>
      <Title
-     title={`Articulos de ${gender}`}/>
+     title={`Articulos De ${gender}`}/>
       
      <ProductGrid
      products={productsDb}
