@@ -55,3 +55,12 @@ const {productsDb,totalPages} = await getPaginatedProductsWithImages({page,gende
     </div>
   );
 } */
+
+
+  
+  export const Genderpage = () => {
+    return (
+      <div>Genderpage</div>
+    )
+  }
+  
