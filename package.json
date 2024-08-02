@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "next dev",
 
-      "postinstall": "prisma generate",
+
     
-"build": "prisma generate && next build",
+"build": "next build",
     "start": "next start",
     "lint": "next lint",
     "seed": "ts-node src/seeds/seed-database.ts"
