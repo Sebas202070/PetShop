@@ -1,4 +1,4 @@
-import { getPaginatedProductsWithImages } from "@/actions";
+/* import { getPaginatedProductsWithImages } from "@/actions";
 import { Pagination, ProductGrid, Title } from "@/components";
 import { Gender } from "@prisma/client";
 import { redirect } from "next/navigation";
@@ -21,7 +21,7 @@ export default async function NotFoundOk({params,searchParams}: Props ) {
   console.log(gender)
   const page = searchParams.page ? parseInt(searchParams.page) : 1
 const {productsDb,totalPages} = await getPaginatedProductsWithImages({page,gender:gender as Gender,
-})
+}) */
  
 /* if(productsDb.length === 0) {
   redirect(`/gender/${gender}`)
@@ -34,7 +34,7 @@ const {productsDb,totalPages} = await getPaginatedProductsWithImages({page,gende
  } */
 /* console.log(products) */
 
- const labels: Record<string,string> = {
+ /* const labels: Record<string,string> = {
  
   "Unisex":"Unisex",
   "Women":"Women",
@@ -54,4 +54,4 @@ const {productsDb,totalPages} = await getPaginatedProductsWithImages({page,gende
    
     </div>
   );
-}
+} */
