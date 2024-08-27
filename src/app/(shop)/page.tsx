@@ -1,3 +1,5 @@
+export const revalidate = 100
+
 import { getPaginatedProductsWithImages } from "@/actions";
 import { Pagination, ProductGrid, Title} from "@/components";
 import { initialData } from "@/seeds/seed";

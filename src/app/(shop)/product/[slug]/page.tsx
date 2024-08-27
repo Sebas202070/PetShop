@@ -3,6 +3,8 @@
 import { initialData } from "@/seeds";
 import NotFound from "../not-found";
 import { QuantitySelector, SizeSelector,ProductSlideShow, ProductMobileSlideShow } from "@/components";
+import { getProductBySlug } from "@/actions";
+import StockLabel from "@/components/product/stock-label/StockLabel";
 
 
 
@@ -15,9 +17,10 @@ interface Props {
   
 }
 
-export default function ProductItemPage({params}:Props) {
+export default async function ProductItemPage({params}:Props) {
 const {slug} = params
-const product = initialData.products.find(p => p.slug === slug)!
+const product = await getProductBySlug(slug)
+console.log(product)
 
 if (!product) {
   NotFound()
@@ -28,8 +31,8 @@ if (!product) {
   <div className="col-span-1 md:col-span-2">
     <div className="block md:hidden">
     <ProductMobileSlideShow
-    title={product?.title}
-    images={product?.images}
+    title={product?.title!}
+    images={product?.images!}
     classname=""
     
 
@@ -37,8 +40,8 @@ if (!product) {
     </div>
     <div className="hidden md:block">
 <ProductSlideShow
- title={product?.title}
- images={product?.images}
+ title={product?.title!}
+ images={product?.images!}
 classname=""
  
 
@@ -46,12 +49,12 @@ classname=""
 </div>
   </div>
   <div className="w-[380px] col-span-1 mx-5 bg px-5 bg-gray-200 py-4 ">
-
+<StockLabel params={params}/>
 <h1 className="text-xl font-semibold antialiased">{product?.title}</h1>
 <p className="text-lg mb-5">${product?.price}</p>
 <SizeSelector
-selectedSize={product?.sizes[0]}
-availableSizes={product?.sizes}
+selectedSize={product?.sizes[0]!}
+availableSizes={product?.sizes!}
 
 />
 <QuantitySelector/>
