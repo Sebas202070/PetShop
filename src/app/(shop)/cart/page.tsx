@@ -1,19 +1,13 @@
-import { QuantitySelector, Title } from "@/components";
-import { initialData } from "@/seeds";
-import Image from "next/image";
+import { Title } from "@/components";
+
+
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { ProductsInCart } from "./ui/ProductsInCart";
 
 export default function CartPage() {
 
-  const addItems = [
-    initialData.products[0],
-    initialData.products[1],
-    initialData.products[2]
-
-
-  ]
-
+  
   
 /*     redirect("/empty") */
  
@@ -25,36 +19,12 @@ export default function CartPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 ">
         <div className="flex flex-col  ">
           <span className="text-xl">Agregar mas Items</span>
-          <Link href="/" className="mb-5">
+          <Link href="/" className="mb-5 hover:underline hover:text-blue-700">
           Continuar Comprando
           </Link>
 
-       
-{
-addItems.map(a => (
-  <div key={a.slug} className="flex -mx-2 mb-5">
-<Image
-src={`/${a.images[0]}`}
-alt={a.title}
-width={100}
-height={100}
-style={{
-  width:"100px",
-  height:"100px"
-}
-  
-}
-/>
-<div className="mx-4 ">
-  <p>{a.title}</p>
-  <p>${a.price}</p>
-  <QuantitySelector
-  />
-  <button className="btn-primary mt-2">Remover</button>
-</div>
-  </div>
-))
-}
+       <ProductsInCart/>
+
 </div>
 <div className="bg-gray-200 shadow-xl p-7 h-fit ">
 <h2 className="text-2xl mb-2">Resumen de Orden</h2>

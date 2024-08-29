@@ -5,6 +5,7 @@ import NotFound from "../not-found";
 import { QuantitySelector, SizeSelector,ProductSlideShow, ProductMobileSlideShow } from "@/components";
 import { getProductBySlug } from "@/actions";
 import StockLabel from "@/components/product/stock-label/StockLabel";
+import { AddToCart } from "./ui/AddToCart";
 
 
 
@@ -50,15 +51,10 @@ classname=""
   </div>
   <div className="w-[380px] col-span-1 mx-5 bg px-5 bg-gray-200 py-4 ">
 <StockLabel params={params}/>
+<AddToCart product={product!}/>
 <h1 className="text-xl font-semibold antialiased">{product?.title}</h1>
 <p className="text-lg mb-5">${product?.price}</p>
-<SizeSelector
-selectedSize={product?.sizes[0]!}
-availableSizes={product?.sizes!}
 
-/>
-<QuantitySelector/>
-<button className="btn-primary my-5">Agregar al carrito</button>
 <h3 className="font-bold text-sm">Descripcion</h3>
 <p className="font-light">{product?.description}</p>
   </div>
