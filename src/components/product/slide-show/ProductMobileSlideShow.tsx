@@ -26,11 +26,12 @@ export const ProductMobileSlideShow = ({title,images,classname}:Props) => {
     <>
     <Swiper
    style={{
-    width:"40vh",
+    width:"32vh",
     height:"228px",
     marginBottom:"10px",
     marginTop:"80px",
-    marginLeft:"40px",
+    marginLeft:"54px",
+   
 
    
    
@@ -51,7 +52,7 @@ spaceBetween={50}
    className='object-fill'
      src={`/${i}`}
      alt='Not Found'
-     width={700}
+     width={1400}
      height={700}
      
      
@@ -82,8 +83,8 @@ spaceBetween={50}
 
      src={`/${i}`}
      alt='Not Found'
-     width={380}
-     height={380}
+     width={280}
+     height={280}
      className='object-cover'
      
      />

@@ -49,7 +49,7 @@ classname=""
 />
 </div>
   </div>
-  <div className="w-[380px] col-span-1 mx-5 bg px-5 bg-gray-200 py-4 ">
+  <div className="ml-3 w-[380px] col-span-1 mx-5 bg px-5 bg-gray-200 py-4 ">
 <StockLabel params={params}/>
 <AddToCart product={product!}/>
 <h1 className="text-xl font-semibold antialiased">{product?.title}</h1>

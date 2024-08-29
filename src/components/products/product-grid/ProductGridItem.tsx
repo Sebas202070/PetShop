@@ -33,7 +33,7 @@ const [displayImage, setDisplayImage] = useState(product.images[0])
         onMouseLeave={()=>  setDisplayImage(product.images[0])}
         />
         </Link>
-        <div className="p-4 flex flex-col ">
+        <div className="-mt-2 ml-10 p-4 flex flex-col ">
             <Link className="hover:text-blue-700" href={`/product/${product.slug}`}>
             {product.title}
            

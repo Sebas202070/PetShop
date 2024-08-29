@@ -29,7 +29,7 @@ if(productsDb.length === 0) {
 title={"PetShop La Santa"}
 subtitle="Todo para tus Mascotas"
 />
-<div className="md:ml-20">
+<div className="-ml-4 md:ml-20">
     <ProductGrid products={productsDb}/>
 <Pagination totalPages={totalPages}/>
     </div>

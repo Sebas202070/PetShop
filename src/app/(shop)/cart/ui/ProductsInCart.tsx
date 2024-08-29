@@ -2,8 +2,10 @@
 
 import { QuantitySelector } from '@/components'
 import { UseStoreCart } from '@/store'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 
@@ -20,6 +22,7 @@ export const ProductsInCart = () => {
     }, []);
 
     if (!loaded) return <span>Loading..</span> 
+
   return (
     <div>
         {

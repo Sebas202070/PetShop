@@ -4,12 +4,13 @@ import { Title } from "@/components";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { ProductsInCart } from "./ui/ProductsInCart";
+import { OrderSummay } from "./ui/OrderSummay";
+
 
 export default function CartPage() {
 
-  
-  
-/*     redirect("/empty") */
+ 
+
  
   return (
     <div className="flex justify-center items-center mb-72 px-10 sm:px-0 ">
@@ -28,15 +29,7 @@ export default function CartPage() {
 </div>
 <div className="bg-gray-200 shadow-xl p-7 h-fit ">
 <h2 className="text-2xl mb-2">Resumen de Orden</h2>
-<div className="grid grid-cols-2">
-  <span>No. de Productos</span>
-  <span className="text-right"> 3 Articulos</span>
-<span>Impuestos (15%)</span>
-<span className="text-right">$ 100</span>
-<span className="text-xl font-semibold mt-5">Total</span>
-<span className="text-right mt-5">$ 100</span>
-
-</div>
+<OrderSummay/>
 <div>
   <Link
   href="/checkout/address"
