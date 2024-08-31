@@ -2,6 +2,7 @@
 
 import { UseStoreCart } from "@/store"
 import { currencyFormat } from "@/utils"
+import { useRouter } from "next/navigation"
 import { useState,useEffect } from "react"
 import { TbAxe } from "react-icons/tb"
 
@@ -9,13 +10,22 @@ export const OrderSummay = () => {
 
     const {itemsInCart,subtotal,tax,total} = UseStoreCart(state => state.getSummaryInformation())
     const [loaded, setLoaded] = useState(false)
-
+    const router = useRouter();
   
 
     useEffect(() => {
         
         setLoaded(true)
     }, []);
+
+    useEffect(() => {
+
+      if ( itemsInCart === 0 && loaded === true )   {
+        router.replace('/empty')
+      }
+  
+  
+    },[ itemsInCart, loaded,router ])
 
     if(!loaded) return <span>Loading..</span>
   return (
