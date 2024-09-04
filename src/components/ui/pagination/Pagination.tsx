@@ -19,7 +19,7 @@ export const Pagination = ({totalPages}:Props) => {
     const currentPage = Number(searchparams.get("page")? searchparams.get("page") : 1 )?? 1
 
     const allPages = generatePaginateNumbers(currentPage, totalPages)
-    console.log(allPages)
+ /*    console.log(allPages) */
    
     const createPageUrl = (pageNumber: number | string)=> {
 const params = new URLSearchParams(searchparams)

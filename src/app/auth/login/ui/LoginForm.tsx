@@ -3,6 +3,7 @@
 import { authenticate } from '@/actions/auth/login'
 import clsx from 'clsx'
 import Link from 'next/link'
+import { useEffect } from 'react'
 import { useFormStatus } from 'react-dom'
 import { useFormState } from 'react-dom'
 import { IoInformationOutline } from 'react-icons/io5'
@@ -11,6 +12,13 @@ import { IoInformationOutline } from 'react-icons/io5'
 export const LoginForm = () => {
 const [state, dispatch] = useFormState(authenticate,undefined)
 console.log(state)
+
+useEffect(() => {
+  
+  if(state === "Success"){
+    window.location.replace("/")
+  }
+}, [state]);
   return (
 
         <form action={dispatch} className="flex flex-col">
