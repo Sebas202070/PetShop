@@ -6,6 +6,9 @@ import { countries } from "./seed-countries"
 
 async function main () {
 /* await Promise.all([ */
+     await prisma.orderAddress.deleteMany();
+     await prisma.orderItem.deleteMany();
+     await prisma.order.deleteMany();
      await prisma.userAddress.deleteMany();
      await prisma.user.deleteMany();
      await prisma.countries.deleteMany();
@@ -40,14 +43,14 @@ await prisma.category.createMany({
 }) */
 
 const categoryDB = await prisma.category.findMany()
-console.log(categoryDB)
+/* console.log(categoryDB) */
 
 const categoryMap = categoryDB.reduce((map,category)=> {
     map[category.name.toLowerCase()] = category.id
 return map
 }, {} as Record<string,string> )
 
-console.log(categoryMap)
+/* console.log(categoryMap) */
 
 
 const {images,type,...product1} = products[0]

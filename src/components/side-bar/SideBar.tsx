@@ -76,7 +76,7 @@ className='fade-in fixed top-0 left-0 w-screen h-screen z-10 backdrop-filter bac
                               size={20} />
                           <span className='ml-3'>Perfil de Usuario</span>
                       </Link><Link
-                          href="/"
+                          href="/orders"
                           className='flex items-center mt-4 p-2 hover:bg-gray-100 rounded transition-all'
 
                       >

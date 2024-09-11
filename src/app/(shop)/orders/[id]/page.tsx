@@ -1,10 +1,15 @@
 
+import { getOrderById } from "@/actions/order/get-order-by-id";
 import { Title } from "@/components";
 import { initialData } from "@/seeds";
+import { currencyFormat } from "@/utils";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { IoCardOutline } from "react-icons/io5";
+import { PayPalButton } from "../../../../components/paypal/PaypalButton";
+import { OrderStatus } from "@/components/orders/OrderStatus";
 
 interface Props {
   params: {
@@ -12,18 +17,27 @@ interface Props {
   }
 }
 
-export default function OrderIdPage({params}:Props) {
+export default async function OrderIdPage({params}:Props) {
 
-  const addItems = [
+ /*  const addItems = [
     initialData.products[0],
     initialData.products[1],
     initialData.products[2]
 
  
 
-  ]
+  ] */
 
+  
   const {id} = params
+  const {ok,order} = await getOrderById(id)
+  if(!ok) {
+    redirect("/")
+  }
+/*   console.log(JSON.stringify(order)) */
+
+
+const address = order
   return (
     <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
       <div className="flex flex-col w-[1000px] ">
@@ -31,27 +45,15 @@ export default function OrderIdPage({params}:Props) {
       title={`Orden #${id}`}/>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
         <div className="flex flex-col ">
-        <div className={
-        clsx(
-"flex items-center rounded-lg py-2 px-3.5 text-xs font-bold text-white mb-5 ",
-{
-  'bg-red-500':false,
-  'bg-green-500':true,
-}
-        )
-        
-       }>
-        <IoCardOutline size={30}/>
-        <span className="mx-2 text-xl">Pago Aprobado</span>
-       </div>
+        <OrderStatus isPaid={order?.isPaid ?? false} />
 
        
 {
-addItems.map(a => (
-  <div key={a.slug} className="flex -mx-2 mb-5">
+address?.OrderItem.map(a => (
+  <div key={a.product.slug} className="flex -mx-2 mb-5">
 <Image
-src={`/${a.images[0]}`}
-alt={a.title}
+src={`/${a.product.ProductImage[0].url}`}
+alt={a.product.title}
 width={100}
 height={100}
 style={{
@@ -62,9 +64,9 @@ style={{
 }
 />
 <div className="mx-4 ">
-  <p>{a.title}</p>
-  <p>${a.price}</p>
-  <p>Subtotal: ${a.price * 3}</p>
+  <p>{a.product.title}</p>
+  <p>{currencyFormat(a.price)}</p>
+  <p>Subtotal: {currencyFormat(a.price * a.quantity)}</p>
  
 </div>
   </div>
@@ -74,36 +76,29 @@ style={{
 <div className="bg-gray-200 shadow-xl  p-7 h-fit">
   <h2 className="text-2xl">Direccion de entrega</h2>
   <div className="mb-10">
-    <p>Sebastian Najle</p>
-    <p>Picaflor y Ombu s/n</p>
-    <p>CP 3004</p>
-    <p>Garupa,Misiones</p>
+    <p>{address?.OrderAddress?.firstName} {address?.OrderAddress?.lastName}</p>
+    <p>{address?.OrderAddress?.address}</p>
+    <p>{address?.OrderAddress?.postalCode}</p>
+    <p>{address?.OrderAddress?.city}</p>
+    <p>{address?.OrderAddress?.countryId}</p>
   </div>
   <div className="w-full bg-black h-0.5 mb-2 -mt-2"/>
 <h2 className="text-2xl mb-2">Resumen de Orden</h2>
 <div className="grid grid-cols-2">
-  <span>No. de Productos</span>
-  <span className="text-right"> 3 </span>
+  <span></span>
+<span className="text-right">{address?.OrderItem.map(p=>p.quantity)}</span>
 <span>Impuestos (15%)</span>
-<span className="text-right">$100</span>
+<span className="text-right">{currencyFormat (address!.tax)}</span>
 <span className="text-xl font-semibold mt-5">Total:</span>
-<span className="text-right mt-5">$100</span>
+<span className="text-right mt-5">{currencyFormat(address!.total)}</span>
 
 </div>
 <div className="mt-5 mb-2 w-full">
-<div className={
-        clsx(
-"flex items-center rounded-lg py-2 px-3.5 text-xs font-bold text-white mb-5 ",
-{
-  'bg-red-500':false,
-  'bg-green-500':true,
-}
-        )
-        
-       }>
-        <IoCardOutline size={30}/>
-        <span className="mx-2 text-xl">Pago aprobado</span>
-       </div>
+{order?.isPaid ? (
+                <OrderStatus isPaid={order?.isPaid ?? false} />
+              ) : (
+                <PayPalButton amount={order!.total} orderId={order!.id} />
+              )}
  
 </div>
 </div>

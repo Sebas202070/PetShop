@@ -15,6 +15,7 @@ interface State {
     total: number;
     itemsInCart: number;
   };
+  clearCart : ()=> void
 }
 
 export const UseStoreCart = create<State>()(
@@ -64,7 +65,7 @@ export const UseStoreCart = create<State>()(
       },
       addProductToCart: (product: CartProduct) => {
         const { cart } = get();
-        console.log(cart);
+       /*  console.log(cart); */
 
         const productInCart = cart.some(
           (item) => item.id === product.id && item.sizes === product.sizes
@@ -82,6 +83,10 @@ export const UseStoreCart = create<State>()(
         });
         set({ cart: updatedCartProducts });
       },
+
+      clearCart:()=>{
+        set({cart:[]})
+      }
     }),
 
     {

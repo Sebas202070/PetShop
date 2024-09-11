@@ -1,10 +1,12 @@
 "use client"
 
+import { placeOrder } from "@/actions/order/place-order"
 import { OrderSummay } from "@/app/(shop)/cart/ui/OrderSummay"
 import { UseStoreCart } from "@/store"
 import { useAddress } from "@/store/address/address-store"
 import { currencyFormat } from "@/utils"
 import clsx from "clsx"
+import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
 export const PlaceOrder = () => {
@@ -14,21 +16,39 @@ export const PlaceOrder = () => {
     const address = useAddress(state=> state.address)
     const {itemsInCart,subtotal,tax,total} = UseStoreCart(state => state.getSummaryInformation())
 
+    
     const cart = UseStoreCart(state=> state.cart)
+    const clearCart = UseStoreCart(state=> state.clearCart)
 
 
     const [isPlacingOrder,setIsPlacingOrder]=useState(false)
+    const [errorMessage, setErrorMessage] = useState("")
 
 
-    const placingOrder =  ()=>{
+    const router = useRouter()
+
+
+    const placingOrder = async ()=>{
         setIsPlacingOrder(true)
         const productsToOrder=cart.map(product => ({
             productId:product.id,
             quantity:product.quantity,
             size:product.sizes
         }))
-console.log(address,productsToOrder)
-        setIsPlacingOrder(false)
+
+const res = await placeOrder(productsToOrder,address)
+if(!res?.ok){
+    setIsPlacingOrder(false)
+    setErrorMessage(res?.message)
+    return
+}
+
+
+clearCart()
+router.replace("/orders/" + res.order?.id)
+
+        
+    
     }
 
     useEffect(() => {
@@ -54,7 +74,7 @@ if(!loaded) return <h2>Loading..</h2>
  
     <span>No. de Productos</span>
   <span className="text-right"> { itemsInCart === 1 ? "1 Articulo" : `${itemsInCart} Articulos`}</span>
-<span>Impuestos (15%)</span>
+<span>Impuestos (21%)</span>
 <span className="text-right">{currencyFormat(tax)}</span>
 <span>Sub-Total</span>
 <span className="text-right">{currencyFormat(subtotal)}</span>
@@ -67,6 +87,9 @@ if(!loaded) return <h2>Loading..</h2>
   <p className="mb-5"></p>
   <span className="text-xs">Al hacer click en Procesar Orden, aceptas nuestros <a className="underline" href="#">Terminos y condiciones</a> </span>
   
+  <div>
+  <span className="text-xs text-red-700"> {errorMessage}</span>
+  </div>
   <button
           // href="/orders/123"
           onClick={ placingOrder }
