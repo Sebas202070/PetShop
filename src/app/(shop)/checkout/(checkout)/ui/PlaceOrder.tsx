@@ -100,7 +100,7 @@ if(!loaded) return <h2>Loading..</h2>
             })
           }
         >
-          Colocar orden
+         Confirmar Compra
         </button>
 </div>
 </div>

@@ -78,7 +78,7 @@ className='fade-in fixed top-0 left-0 w-screen h-screen z-10 backdrop-filter bac
                       </Link><Link
                           href="/orders"
                           className='flex items-center mt-4 p-2 hover:bg-gray-100 rounded transition-all'
-
+                          onClick={()=>closeMenu()}
                       >
                               <IoTicketOutline
                                   size={20} />
@@ -127,8 +127,9 @@ className='fade-in fixed top-0 left-0 w-screen h-screen z-10 backdrop-filter bac
 isAuthtenticated && isRoleAdmin && (
     <div>
     <Link 
-            href="/"
+            href="/admin/products"
             className='flex items-center mt-4 p-2 hover:bg-gray-100 rounded transition-all'
+            onClick={()=>closeMenu()}
             >
                 <IoShirtOutline
                 size={20}
@@ -138,7 +139,8 @@ isAuthtenticated && isRoleAdmin && (
                 <span className='ml-3'>Productos</span>
             </Link>
             <Link 
-            href="/"
+            href="/admin/orders"
+            onClick={()=>closeMenu()}
             className='flex items-center mt-4 p-2 hover:bg-gray-100 rounded transition-all'
             >
                 <IoTicketOutline
@@ -148,8 +150,9 @@ isAuthtenticated && isRoleAdmin && (
                 <span className='ml-3'>Ordenes</span>
             </Link>
             <Link 
-            href="/"
+            href="/admin/users"
             className='flex items-center mt-4 p-2 hover:bg-gray-100 rounded transition-all'
+            onClick={()=>closeMenu()}
             >
                 <IoPeopleOutline
                 size={20}

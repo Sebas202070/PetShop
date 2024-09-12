@@ -85,7 +85,7 @@ style={{
   <div className="w-full bg-black h-0.5 mb-2 -mt-2"/>
 <h2 className="text-2xl mb-2">Resumen de Orden</h2>
 <div className="grid grid-cols-2">
-  <span></span>
+  <span>No. de Articulos</span>
 <span className="text-right">{address?.OrderItem.map(p=>p.quantity)}</span>
 <span>Impuestos (15%)</span>
 <span className="text-right">{currencyFormat (address!.tax)}</span>
