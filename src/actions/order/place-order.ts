@@ -107,12 +107,23 @@ try {
         }
     })
     
-    const {country,...restAddress} = address
+   /*  const {country,...restAddress} = address */
     const orderAddress = await tx.orderAddress.create({
         data:{
-            ...restAddress,
-            countryId:country,
-            orderId:order.id
+            firstName:address.firstName,
+            lastName:address.lastName,
+            address:address.address,
+            address2:address.address2,
+            city:address.city,
+            postalCode:address.postalCode,
+            phone:address.phone,
+            orderId:order.id,
+            countryId:address.country
+
+
+
+
+            
     
         }
     })
