@@ -12,6 +12,7 @@ import "./productslideshow.css"
 import { FreeMode, Navigation,Autoplay, Thumbs } from 'swiper/modules';
 import Image from 'next/image';
 import { useState } from 'react';
+import { ProductImages } from '@/components/product-images/ProductImage';
 
 
 interface Props {
@@ -48,9 +49,9 @@ spaceBetween={50}
   >{
     images.map(i=> (
 <SwiperSlide key={i}>
-     <Image
+     <ProductImages
    className='object-fill'
-     src={`/${i}`}
+     src={i}
      alt='Not Found'
      width={1400}
      height={700}
@@ -79,9 +80,9 @@ spaceBetween={50}
         {
     images.map(i=> (
 <SwiperSlide key={i}>
-     <Image
+     <ProductImages
 
-     src={`/${i}`}
+     src={i}
      alt='Not Found'
      width={280}
      height={280}

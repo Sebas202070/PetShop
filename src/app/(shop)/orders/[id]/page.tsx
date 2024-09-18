@@ -1,5 +1,5 @@
 
-import { getOrderById } from "@/actions/order/get-order-by-id";
+import { getOrderById } from "@/actions";
 import { Title } from "@/components";
 import { initialData } from "@/seeds";
 import { currencyFormat } from "@/utils";

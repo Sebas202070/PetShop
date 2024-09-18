@@ -2,9 +2,9 @@ import { Title } from '@/components';
 import Link from 'next/link';
 import { AddressForm } from './ui/AddressForm';
 import { countries } from '@/seeds/seed-countries';
-import { getCountries } from '@/actions/countries/get-countries';
+import { getCountries } from '@/actions'
 import { auth } from '@/auth.config';
-import { getUserAddress } from '@/actions/address/get-user-address';
+import { getUserAddress } from '@/actions';
 
 
 export default async function NamePage() {

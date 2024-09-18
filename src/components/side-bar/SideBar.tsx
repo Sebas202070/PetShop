@@ -1,6 +1,6 @@
 "use client"
 
-import { logout } from '@/actions/auth/logout'
+import { logout } from '@/actions'
 import { useUISTORE } from '@/store'
 import clsx from 'clsx'
 import { useSession } from 'next-auth/react'

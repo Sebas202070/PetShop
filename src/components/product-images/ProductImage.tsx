@@ -7,22 +7,27 @@ interface Props {
   style?: React.StyleHTMLAttributes<HTMLImageElement>['style'];
   width: number;
   height: number;
+  onmouseEnter?: ()=> void
+  onmouseLeave?: ()=> void
 }
 
-export const ProductImage = ({
+export const ProductImages = ({
   src,
   alt,
   className,
   style,
   width,
-  height
+  height,
+  onmouseEnter,
+  onmouseLeave,
+  
 }: Props) => {
 
   const localSrc = ( src ) 
     ? src.startsWith('http') // https://urlcompletodelaimagen.jpg
       ? src
       : `/${ src }`
-    : '/imgs/placeholder.jpg';
+    : '/placeholder.jpg';
 
   return (
     <Image
@@ -32,6 +37,8 @@ export const ProductImage = ({
       alt={ alt }
       className={ className }
       style={ style }
+      onMouseEnter={onmouseEnter}
+      onMouseLeave={onmouseLeave}
     />
   );
 };

@@ -55,8 +55,9 @@ where: {
     }
    
 } catch (error) {
-   
+
     throw new Error("No se pudo cargar los productos")
+
 }
 
 }

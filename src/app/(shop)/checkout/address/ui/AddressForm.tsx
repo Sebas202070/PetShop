@@ -1,7 +1,7 @@
 "use client";
 
-import { deleteUserAddress } from "@/actions/address/delete-user-address";
-import { setUserAddress } from "@/actions/address/set-user-address";
+import { deleteUserAddress } from "@/actions";
+import { setUserAddress } from "@/actions";
 import { Address } from "@/interfaces/address.interface";
 import { Countries } from "@/interfaces/countries.interface";
 import { useAddress } from "@/store/address/address-store";

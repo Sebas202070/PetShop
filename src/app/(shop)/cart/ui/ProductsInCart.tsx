@@ -1,6 +1,7 @@
 "use client"
 
 import { QuantitySelector } from '@/components'
+import { ProductImages } from '@/components/product-images/ProductImage'
 import { UseStoreCart } from '@/store'
 
 import Image from 'next/image'
@@ -28,8 +29,8 @@ export const ProductsInCart = () => {
         {
 productsInCart.map(a => (
   <div key={crypto.randomUUID()} className="flex -mx-2 mb-5">
-<Image
-src={`/${a.image}`}
+<ProductImages
+src={a.image}
 alt={a.title}
 width={100}
 height={100}

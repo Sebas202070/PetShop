@@ -1,7 +1,7 @@
 "use client";
 
-import { login } from "@/actions/auth/login";
-import { registerUser } from "@/actions/auth/register";
+import { login } from "@/actions";
+import { registerUser } from "@/actions";
 import clsx from "clsx";
 import Link from "next/link";
 import React, { useState } from "react";

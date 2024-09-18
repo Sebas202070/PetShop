@@ -1,6 +1,6 @@
 "use client"
 
-import { placeOrder } from "@/actions/order/place-order"
+import { placeOrder } from "@/actions"
 import { OrderSummay } from "@/app/(shop)/cart/ui/OrderSummay"
 import { UseStoreCart } from "@/store"
 import { useAddress } from "@/store/address/address-store"

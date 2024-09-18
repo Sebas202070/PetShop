@@ -1,6 +1,6 @@
 'use client';
 
-import { changeUserRole } from '@/actions/users/change-users-role';
+import { changeUserRole } from '@/actions';
 import type { User } from '@/interfaces/user.interface';
 
 interface Props {

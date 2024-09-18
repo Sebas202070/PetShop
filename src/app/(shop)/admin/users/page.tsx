@@ -9,7 +9,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { IoCardOutline } from "react-icons/io5";
 import { UsersTable } from "./ui/UsersTable";
-import { getPaginatedUsers } from "@/actions/users/get-paginator-users";
+import { getPaginatedUsers } from "@/actions";
 
 export default async function OrdersPage() {
   const { ok, users = [] } = await getPaginatedUsers();
