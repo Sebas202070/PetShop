@@ -8,7 +8,7 @@ export interface Product {
     slug: string;
     tags: string[];
     title: string;
-    type: ValidTypes;
+    /* type: ValidTypes; */
     gender: ValidCategory;
    }
 
@@ -32,5 +32,5 @@ export interface ProductImage {
 
 export type ValidCategory = 'Men'|'Women'|'Kids'|'Unisex'
 export type ValidSizes = 'XS'|'S'|'M'|'L'|'XL'|'XXL';
-export type ValidTypes = 'Shirts'|'Pants'|'Hoodies'|'Hats';
+export type ValidTypes = 'shirts'|'pants'|'hoodies'|'hats';
 
