@@ -34,7 +34,7 @@ interface FormInputs {
   sizes:string[],
   tags:string,
   gender:"Men" | "Women" | "Kids" | "Unisex",
-  categoriId: string,
+  categoryId: string,
   images?:FileList;
 
 }
@@ -49,7 +49,8 @@ export const ProductForm = ({ product,categories }: Props) => {
     ...product,
     tags:product.tags?.join(","),
    sizes:product.sizes?? [],
-   images:undefined
+   images:undefined,
+ 
   
   
     }
@@ -80,7 +81,7 @@ formdata.append("inStock", productsToSave.inStock.toString())
 
 formdata.append("sizes", productsToSave.sizes.toString())
 formdata.append("tags", productsToSave.tags)
-formdata.append("categoryId", productsToSave.categoriId)
+formdata.append("categoryId", productsToSave.categoryId)
     formdata.append("gender", productsToSave.gender);
     if ( images ) {
       for ( let i = 0; i < images.length; i++  ) {
@@ -155,7 +156,7 @@ console.log(sizes)
 
         <div className="flex flex-col mb-2">
           <span>Categoria</span>
-          <select className="p-2 border rounded-md bg-gray-200" {...register("categoriId",{required:true})}>
+          <select className="p-2 border rounded-md bg-gray-200" {...register("categoryId",{required:true})}>
             <option value="">[Seleccione]</option>
             {
                 categories.map(c=>(

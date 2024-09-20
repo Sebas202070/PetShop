@@ -97,8 +97,12 @@ style={{
 {order?.isPaid ? (
                 <OrderStatus isPaid={order?.isPaid ?? false} />
               ) : (
+                
                 <PayPalButton amount={order!.total} orderId={order!.id} />
-              )}
+                
+              )
+              
+              }
  
 </div>
 </div>

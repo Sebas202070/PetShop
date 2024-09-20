@@ -100,7 +100,7 @@ if(!loaded) return <h2>Loading..</h2>
             })
           }
         >
-         Confirmar Compra
+         Elegir metodo de pago
         </button>
 </div>
 </div>
