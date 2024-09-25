@@ -11,6 +11,13 @@ import { IoCardOutline } from "react-icons/io5";
 import { PayPalButton } from "../../../../components/paypal/PaypalButton";
 import { OrderStatus } from "@/components/orders/OrderStatus";
 
+import { MercadoPayment } from "@/actions/mercado/get-mercado";
+import { Mercado } from "@/services/MercadoPagoButton";
+
+
+
+
+
 interface Props {
   params: {
     id:string
@@ -38,6 +45,8 @@ export default async function OrderIdPage({params}:Props) {
 
 
 const address = order
+
+const {id:idmp} = await MercadoPayment(id)
   return (
     <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
       <div className="flex flex-col w-[1000px] ">
@@ -103,6 +112,21 @@ style={{
               )
               
               }
+ 
+</div>
+<div className="mt-5 mb-2 w-full">
+{order?.isPaid ? (
+                <OrderStatus isPaid={order?.isPaid ?? false} />
+              ) : (
+                
+                < Mercado id={idmp?? ""} />
+               
+              
+               
+        
+              )
+              
+}
  
 </div>
 </div>
