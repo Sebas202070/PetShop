@@ -96,24 +96,13 @@ style={{
 <div className="grid grid-cols-2">
   <span>No. de Articulos</span>
 <span className="text-right">{address?.OrderItem.map(p=>p.quantity)}</span>
-<span>Impuestos (15%)</span>
-<span className="text-right">{currencyFormat (address!.tax)}</span>
+
+
 <span className="text-xl font-semibold mt-5">Total:</span>
 <span className="text-right mt-5">{currencyFormat(address!.total)}</span>
 
 </div>
-<div className="mt-5 mb-2 w-full">
-{order?.isPaid ? (
-                <OrderStatus isPaid={order?.isPaid ?? false} />
-              ) : (
-                
-                <PayPalButton amount={order!.total} orderId={order!.id} />
-                
-              )
-              
-              }
- 
-</div>
+
 <div className="mt-5 mb-2 w-full">
 {order?.isPaid ? (
                 <OrderStatus isPaid={order?.isPaid ?? false} />
@@ -127,6 +116,18 @@ style={{
               )
               
 }
+ 
+</div>
+<div className="mt-5 mb-2 w-full">
+{order?.isPaid ? (
+                <OrderStatus isPaid={order?.isPaid ?? false} />
+              ) : (
+                
+                <PayPalButton amount={order!.total} orderId={order!.id} />
+                
+              )
+              
+              }
  
 </div>
 </div>

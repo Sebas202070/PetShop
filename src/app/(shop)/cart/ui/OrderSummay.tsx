@@ -33,8 +33,8 @@ export const OrderSummay = () => {
         <div className="grid grid-cols-2">
   <span>No. de Productos</span>
   <span className="text-right"> { itemsInCart === 1 ? "1 Articulo" : `${itemsInCart} Articulos`}</span>
-<span>Impuestos (15%)</span>
-<span className="text-right">{currencyFormat(tax)}</span>
+
+
 <span>Sub-Total</span>
 <span className="text-right">{currencyFormat(subtotal)}</span>
 

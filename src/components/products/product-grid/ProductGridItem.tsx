@@ -2,6 +2,7 @@
 
 import { ProductImages } from "@/components/product-images/ProductImage"
 import { Product } from "@/interfaces"
+import { currencyFormat } from "@/utils"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
@@ -41,7 +42,7 @@ const [displayImage, setDisplayImage] = useState(product.images[0])
             {product.title}
            
             </Link>
-            <span className="font-bold">${product.price}</span>
+            <span className="font-bold">{currencyFormat(product.price)}</span>
         </div>
    
            

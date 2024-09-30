@@ -3,6 +3,7 @@
 import { QuantitySelector } from '@/components'
 import { ProductImages } from '@/components/product-images/ProductImage'
 import { UseStoreCart } from '@/store'
+import { currencyFormat } from '@/utils'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -45,7 +46,7 @@ style={{
     <Link href={`/product/${a.slug}`}>
   <p className='hover:underline hover:text-blue-700 cursor-pointer'>{a.title} Talle {a.sizes}</p>
   </Link>
-  <p>${a.price}</p>
+  <p>{currencyFormat(a.price)}</p>
   <QuantitySelector
   quantity={a.quantity}
   onQuantityChanged={quantity => updatedQuantity(a, quantity)}

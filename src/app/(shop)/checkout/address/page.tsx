@@ -28,7 +28,7 @@ export default async function NamePage() {
 
       <div className="w-full  xl:w-[1000px] flex flex-col justify-center text-left">
         
-        <Title title="Dirección" subtitle="Dirección de entrega" />
+        <Title title="Dirección de Entrega" subtitle="Completa tus Datos de envio" />
 
         <AddressForm countries={countriesData} useStoreAddress={userAddres}/>
 

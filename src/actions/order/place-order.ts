@@ -49,7 +49,7 @@ export const placeOrder = async (productIds:ProductToOrder[],address:Address)=> 
         const subTotal = product.price * productQuantity
         totals.subTotal += subTotal
         totals.tax += subTotal * 0.21
-        totals.total += subTotal + (subTotal * 0.21)
+        totals.total += subTotal 
     return totals
 
     

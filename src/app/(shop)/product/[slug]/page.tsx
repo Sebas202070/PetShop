@@ -6,6 +6,7 @@ import { QuantitySelector, SizeSelector,ProductSlideShow, ProductMobileSlideShow
 import { getProductBySlug } from "@/actions";
 import StockLabel from "@/components/product/stock-label/StockLabel";
 import { AddToCart } from "./ui/AddToCart";
+import { currencyFormat } from "@/utils";
 
 
 
@@ -53,7 +54,7 @@ classname=""
 <StockLabel params={params}/>
 <AddToCart product={product!}/>
 <h1 className="text-xl font-semibold antialiased">{product?.title}</h1>
-<p className="text-lg mb-5">${product?.price}</p>
+<p className="text-lg mb-5">{currencyFormat(product?.price!)}</p>
 
 <h3 className="font-bold text-sm">Descripcion</h3>
 <p className="font-light">{product?.description}</p>

@@ -74,8 +74,7 @@ if(!loaded) return <h2>Loading..</h2>
  
     <span>No. de Productos</span>
   <span className="text-right"> { itemsInCart === 1 ? "1 Articulo" : `${itemsInCart} Articulos`}</span>
-<span>Impuestos (21%)</span>
-<span className="text-right">{currencyFormat(tax)}</span>
+
 <span>Sub-Total</span>
 <span className="text-right">{currencyFormat(subtotal)}</span>
 
@@ -85,7 +84,7 @@ if(!loaded) return <h2>Loading..</h2>
 </div>
 <div className="mt-5 mb-2 w-full">
   <p className="mb-5"></p>
-  <span className="text-xs">Al hacer click en Procesar Orden, aceptas nuestros <a className="underline" href="#">Terminos y condiciones</a> </span>
+  {/* <span className="text-xs">Al hacer click en Procesar Orden, aceptas nuestros <a className="underline" href="#">Terminos y condiciones</a> </span> */}
   
   <div>
   <span className="text-xs text-red-700"> {errorMessage}</span>
