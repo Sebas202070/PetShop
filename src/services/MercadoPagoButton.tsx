@@ -7,7 +7,7 @@ import { MercadoPayment } from '@/actions/mercado/get-mercado';
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
 
 
-initMercadoPago('TEST-87f7003a-c62a-4d51-96b1-a4bfb6d11d4e',{
+initMercadoPago('APP_USR-0938b246-f8b7-4955-bc39-bf88bcee52bb',{
     locale:"es-AR"
 });
 interface Props{

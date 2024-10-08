@@ -10,6 +10,7 @@ import { currencyFormat } from "@/utils";
 
 
 
+
 interface Props {
   params : {
     slug: string
@@ -20,6 +21,7 @@ interface Props {
 }
 
 export default async function ProductItemPage({params}:Props) {
+
 const {slug} = params
 const product = await getProductBySlug(slug)
 console.log(product)

@@ -1,4 +1,5 @@
 import { getPaginatedProductsWithImages } from "@/actions";
+import { Notification } from "@/actions/mercado/notification";
 import { Pagination, ProductGrid, Title } from "@/components";
 import { Gender } from "@prisma/client";
 import { redirect } from "next/navigation";
@@ -17,6 +18,7 @@ interface Props  {
 
 
 export default async function NotFoundOk({params,searchParams}: Props ) {
+  
   const {gender} = params
   console.log(gender)
   const page = searchParams.page ? parseInt(searchParams.page) : 1

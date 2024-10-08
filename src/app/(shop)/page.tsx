@@ -1,6 +1,7 @@
 export const revalidate = 100
 
 import { getPaginatedProductsWithImages } from "@/actions";
+
 import { Pagination, ProductGrid, Title} from "@/components";
 import { initialData } from "@/seeds/seed";
 import { redirect } from "next/navigation";
@@ -14,6 +15,7 @@ interface Props {
 export default async function Home({searchParams}:Props) {
 
 
+  
   const page = searchParams.page ? parseInt(searchParams.page) : 1
 /* console.log(page) */
 
