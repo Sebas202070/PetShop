@@ -7,7 +7,7 @@ import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server"
 
 
-export const Notification = async (req:NextRequest) => {
+export const POST = async (req:NextRequest) => {
 
 
  /*  const orders = await getOrderById(id) */
@@ -75,5 +75,5 @@ await approved()
  
 }
 
-export {Notification as POST}
+
 
