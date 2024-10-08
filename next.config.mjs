@@ -8,7 +8,7 @@ const nextConfig = {
         hostname:"res.cloudinary.com"
       }
     ]
-  },
+  }/* ,
     eslint: {
         ignoreDuringBuilds: true,
     },
@@ -18,7 +18,7 @@ const nextConfig = {
       // your project has type errors.
       // !! WARN !!
       ignoreBuildErrors: true,
-    },
+    }, */
 };
 
 export default nextConfig;
