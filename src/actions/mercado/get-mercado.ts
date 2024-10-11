@@ -26,12 +26,12 @@ export const MercadoPayment = async (id: string) => {
     body: {
       items: items, // Ahora pasamos la lista completa de ítems
       back_urls: {
-        success: `https://92f4-161-0-64-81.ngrok-free.app/`,
+        success: `https://lasantapetshop.vercel.app/`,
         failure: "https://www.youtube.com/watch?v=-VD-l5BQsuE&pp=ygUQcGFzYXJlbGEgZGUgcGFnbw%3D%3D",
         pending: "https://www.youtube.com/watch?v=-VD-l5BQsuE&pp=ygUQcGFzYXJlbGEgZGUgcGFnbw%3D%3D",
       },
       auto_return: "approved",
-      notification_url: `https://92f4-161-0-64-81.ngrok-free.app/api/webhook/${id}`,
+      notification_url: `https://lasantapetshop.vercel.app/api/webhook/${id}`,
       
     
     },
